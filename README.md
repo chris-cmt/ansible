@@ -30,3 +30,20 @@ chill@DESKTOP-DTRFTAM:~/git/ansible$ ssha
 Agent pid 6881
 Enter passphrase for /home/chill/.ssh/id_ed25519:
 Identity added: /home/chill/.ssh/id_ed25519 (chill default)
+
+
+### Ansible commands
+ansible all -m gather_facts
+
+ansible all --list-hosts
+
+ansible all -m ping
+
+### Apt update
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+
+### Install something
+ansible all -m apt -a name=vim-nox --become --ask-become-pass
+
+### Apt upgrade
+ansible all -m apt -a upgrade=dist --become --ask-become-pass
