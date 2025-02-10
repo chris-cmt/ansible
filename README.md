@@ -28,16 +28,19 @@ ssh -i ~/.ssh/ansible admin@192.168.178.221
 ssh -i ~/.ssh/ansible admin@192.168.178.60
 ```
 
-chill@DESKTOP-DTRFTAM:~$ ssh-add
-## add the followiung to .bashrc
+## Create an Alis to speed up the ammount of time you need to enter your password
+```
 alias ssha='eval $(ssh-agent) && ssh-add'
 
+chill@DESKTOP-DTRFTAM:~$ ssh-add
 chill@DESKTOP-DTRFTAM:~/git/ansible$ ssha
 Agent pid 6881
 Enter passphrase for /home/chill/.ssh/id_ed25519:
 Identity added: /home/chill/.ssh/id_ed25519 (chill default)
+```
 
-
+# Ansible
+```
 ### Ansible commands
 ansible all -m gather_facts
 
@@ -53,3 +56,4 @@ ansible all -m apt -a name=vim-nox --become --ask-become-pass
 
 ### Apt upgrade
 ansible all -m apt -a upgrade=dist --become --ask-become-pass
+```
