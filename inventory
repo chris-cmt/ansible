@@ -1,19 +1,28 @@
 ### Individual Hosts and Arguments
+## Raspberrypi v1
+[plain_pi]
+admin@192.168.178.77
+
+[plain_pi:vars]
+
+
+## Raspberrypi v4
 [plex]
 admin@192.168.178.221
 
 [plex:vars]
-#ntp_server=ntp.atlanta.example.com
-#proxy=proxy.atlanta.example.com
 
+## Raspberrypi v4
 [data]
 admin@192.168.178.60
 
 [data:vars]
-#ntp_server=ntp.atlanta.example.com
-#proxy=proxy.atlanta.example.com
 
 ### Grouping with children
-[raspberrypi:children]
+[raspberrypi_v4:children]
 plex
 data
+
+
+[raspberrypi_v1:children]
+plain_pi
