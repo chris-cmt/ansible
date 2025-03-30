@@ -1,0 +1,15 @@
+---
+
+- hosts: raspberrypi_v1
+  become: true
+  tasks: 
+
+  - name: Update all packages to the latest version
+    apt:
+      upgrade: dist
+
+        #  - name: Upgrade all packages to the latest version
+        #apt:
+        #name: "*"
+        #state: latest
+
