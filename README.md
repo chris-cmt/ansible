@@ -56,4 +56,14 @@ ansible all -m apt -a name=vim-nox --become --ask-become-pass
 
 ### Apt upgrade
 ansible all -m apt -a upgrade=dist --become --ask-become-pass
+
+### Ansible oneliner for apt update and upgrade
+ansible all -i inventory -m ansible.builtin.apt -a "update_cache=yes upgrade=dist" -b
+
+### Ansible one liner for apt update, upgrade and reboot
+ansible all -i inventory -m ansible.builtin.apt -a "update_cache=yes upgrade=dist" -b && ansible all -i inventory -m ansible.builtin.reboot -b
+
+
 ```
+
+
