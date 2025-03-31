@@ -64,6 +64,10 @@ ansible all -i inventory -m ansible.builtin.apt -a "update_cache=yes upgrade=dis
 ansible all -i inventory -m ansible.builtin.apt -a "update_cache=yes upgrade=dist" -b && ansible all -i inventory -m ansible.builtin.reboot -b
 
 
+### Ansible playbook for patching and reboot
+ansible-playbook -i inventory playbooks/patching-reboot.yml 
+
+
 ```
 
 
